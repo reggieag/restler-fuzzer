@@ -71,6 +71,7 @@ Each request is represented by a hash of its definition.
         "status_code": "400",
         "status_text": "BAD REQUEST",
         "error_message": "{\n    \"errors\": {\n        \"id\": \"'5882' is not of type 'integer'\"\n    },\n    \"message\": \"Input payload validation failed\"\n}\n",
+        "todo marina: update doc": ""
         "request_order": 4
     },
 ```
@@ -92,6 +93,7 @@ the appropriate __"invalid_due_to_..."__ value will be set to 1.
   but there was a failure while parsing the response data.
   * "500" will be set if a 5xx bug was detected.
 * The __"status_code"__ and __"status_text"__ values are the response values received from the server.
+* TODO: marina - update with new properties.
 * The __"error_message"__ value will be set to the response body if the request was not "valid".
 * The __"request_order"__ value is the 0 indexed order that the request was sent.
   * Requests sent during "preprocessing" or "postprocessing" will explicitely say so.

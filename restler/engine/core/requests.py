@@ -45,6 +45,8 @@ class SmokeTestStats(object):
         self.error_msg = None
         self.status_code = None
         self.status_text = None
+        self.request_text = None
+        self.response_text = None
 
 class Request(object):
     """ Request Class. """

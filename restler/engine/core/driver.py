@@ -365,7 +365,8 @@ def generate_sequences_directed_smoketest(fuzzing_requests, checkers):
 
         Side effects: request.stats.status_code updated
                       request.stats.status_text updated
-
+                      request.stats.request_text updated (valid request or last combination)
+                      request.stats.response_text updated (valid request or last combination)
         @return: Tuple containing rendered sequence object, response body, and
                  failure information enum.
         @rtype : Tuple(RenderedSequence, str, FailureInformation)
@@ -389,6 +390,10 @@ def generate_sequences_directed_smoketest(fuzzing_requests, checkers):
             if renderings.final_request_response:
                 request.stats.status_code = renderings.final_request_response.status_code
                 request.stats.status_text = renderings.final_request_response.status_text
+                # Get the last rendered request.  The corresponding response should be
+                # the last received response.
+                request.stats.request_text = renderings[-1].sent_request_data_list[-1]
+                request.stats.response_text = renderings.final_request_response.to_str()
                 response_body = renderings.final_request_response.body
 
             apply_checkers(checkers, renderings, global_lock)

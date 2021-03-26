@@ -890,6 +890,8 @@ def print_spec_coverage(fuzzing_requests):
             req_spec['invalid_due_to_500'] = 1
         req_spec['status_code'] = req.stats.status_code
         req_spec['status_text'] = req.stats.status_text
+        req_spec['request_text'] = req.stats.request_text
+        req_spec['response_text'] = req.stats.response_text
         req_spec['error_message'] = req.stats.error_msg
         req_spec['request_order'] = req.stats.request_order
 

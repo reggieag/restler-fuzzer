@@ -240,7 +240,7 @@ class Sequence(object):
 
     def render(self, candidate_values_pool, lock, preprocessing=False, postprocessing=False):
         """ Core routine that performs the rendering of restler sequences. In
-        principal all requests of a sequence are being constantly rendered with
+        principle, all requests of a sequence are being constantly rendered with
         a specific values combination @param request._current_combination_id
         which we know in the past led to a valid rendering and only the last
         request of the sequence is being rendered iteratively with all feasible
